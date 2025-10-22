@@ -1,0 +1,211 @@
+.conhecer-section-contato {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.conhecer-title-contato {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.conhecer-title-contato::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #db4710;
+}
+
+.conhecer-content-contato {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 20px;
+    position: relative;
+}
+
+/* Barras verticais decorativas */
+.conhecer-content-contato::before,
+.conhecer-content-contato::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    background-color: #df651e33;
+    top: 0;
+}
+
+.conhecer-content-contato::before {
+    left: -20px;
+}
+
+.conhecer-content-contato::after {
+    right: -20px;
+}
+
+/* Barra vertical central */
+.conhecer-horario-contato {
+    position: relative;
+}
+
+.conhecer-horario-contato::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #df651e33;
+}
+
+.conhecer-horario-contato,
+.conhecer-localizacao-contato {
+    padding: 30px;
+}
+
+.conhecer-header-contato {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.conhecer-header-contato h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.conhecer-icon-clock-contato,
+.conhecer-icon-location-contato {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.conhecer-icon-clock-contato::before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d84315' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.conhecer-icon-location-contato::before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d84315' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'%3E%3C/path%3E%3Ccircle cx='12' cy='10' r='3'%3E%3C/circle%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.horario-lista-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.horario-item-contato {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.horario-item-contato:last-child {
+    border-bottom: none;
+}
+
+.dia-contato {
+    font-size: 14px;
+    color: #666;
+    font-weight: 400;
+}
+
+.hora-contato {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.mapa-container-contato {
+    position: relative;
+}
+
+.iframe-mapa-contato {
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.endereco-info-contato {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.endereco-info-contato p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+.btn-rotas-contato {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #be4408;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-rotas-contato:hover {
+    background-color: #bf360c;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .conhecer-content-contato {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    /* Esconde as barras laterais no mobile */
+    .conhecer-content-contato::before,
+    .conhecer-content-contato::after {
+        display: none;
+    }
+    
+    /* Esconde a barra central no mobile */
+    .conhecer-horario-contato::after {
+        display: none;
+    }
+    
+    .conhecer-title-contato {
+        font-size: 26px;
+    }
+    
+    .conhecer-horario-contato,
+    .conhecer-localizacao-contato {
+        padding: 20px;
+    }
+}
