@@ -83,14 +83,18 @@
     </header>
     <div id="pagina-inicial">
       <div class="secao-inicio">
-        <h1>O melhor da padaria e CONVENIÊNCIA em um SÓ lugar</h1>
-        <p>
-          Sanduíches artesanais, bolos caseiros, tortas, pudins e muito mais.
-          Tudo fresquinho e pronto para você.
-        </p>
-        <button class="botao-cardapio">
-          <i class="fas fa-utensils"></i> Fazer Pedido
-        </button>
+        <div class="texto-inicio" >
+          <div id="text-secao-inicio">
+            <h1>O melhor da padaria e <br> CONVENIÊNCIA em um SÓ <br> lugar</h1>
+          </div>
+          <p>
+            Sanduíches artesanais, bolos caseiros, tortas, pudins e muito mais. <br>
+            Tudo fresquinho e pronto para você.
+          </p>
+          <button class="botao-cardapio">
+            <i class="fas fa-utensils"></i> Fazer Pedido
+          </button>
+        </div>
       </div>
       <div class="secao-elemento">
         <img class="imagem-elemento" src="./assets/elemento-incial.svg" alt="Imagem de Lanches" />
@@ -340,7 +344,7 @@
       window.addEventListener("scroll", () => {
         const header = document.querySelector(".header-total");
 
-        if (window.scrollY > 600) {
+        if (window.scrollY > 400) {
           header.classList.add("scrolled");
         } else {
           header.classList.remove("scrolled");
