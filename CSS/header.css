@@ -1,52 +1,496 @@
+/* Header Inicial */
 .header-inicial {
   background: transparent;
   display: flex;
   color: white;
 }
+
+/* Header Total - Barra fixa com transição */
+.header-total {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  z-index: 1000;
+  border-bottom: 3px solid #36363659;
+  padding: 10px 0;
+  transition: all 0.4s ease;
+}
+
+/* Header com fundo branco ao rolar */
+.header-total.scrolled {
+  background-color: white;
+  border-bottom: 3px solid #4f4f4f4f;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Section */
+.logo {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  gap: 15px;
+}
+
 .logo-inicial {
   width: 140px;
   height: auto;
-  margin: 15px;
+  max-height: 9vw;
 }
 
-#nav-inicial {
+.logo h1 {
+  font-size: 1.3rem;
+  line-height: 1.3;
+  font-weight: 600;
+  color: #ff6600;
+  transition: color 0.4s ease;
+}
+
+/* Navegação Desktop */
+#navegacao {
+  display: flex;
+  align-items: center;
+}
+
+.nav-header {
   display: flex;
   justify-content: space-between;
-  gap: 90px;
   align-items: center;
-  margin-left: auto;
-  margin-right: 20px;
-  font-size: 2rem;
-  padding: 3vh;
-  padding-right:100px ;
+  gap: 90px;
+  margin-right: 35px;
+  font-size: 1.5rem;
+  padding-right: 100px;
 }
-#navegacao a{
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+
+#navegacao a {
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: white;
+  transition: color 0.3s ease;
+  position: relative;
 }
-.header-total{
-    width: 100%;
+
+/* Links ficam pretos quando rolar */
+.header-total.scrolled #navegacao a {
+  color: black;
+}
+
+#navegacao a:hover {
+  color: #ff6600;
+}
+
+#navegacao a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ff6600;
+  transition: width 0.3s ease;
+}
+
+#navegacao a:hover::after {
+  width: 100%;
+}
+
+.social-icons-menu {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+/* Estilo minimalista para os ícones (assume <a class="social-icon-menu">) */
+a.social-icon-menu,
+.social-icon-menu {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+  font-size: 1.15rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease, color 0.18s ease;
+  box-shadow: none;
+}
+
+/* Hover / focus */
+a.social-icon-menu:hover,
+a.social-icon-menu:focus,
+.social-icon-menu:hover,
+.social-icon-menu:focus {
+  transform: translateY(-4px);
+  background: rgba(255, 102, 0, 0.08);
+  color: #ff6600;
+  border-color: rgba(255, 102, 0, 0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  outline: none;
+}
+
+/* Acessibilidade: foco visível */
+a.social-icon-menu:focus {
+  box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.12);
+}
+
+/* Versão compacta em telas muito pequenas */
+@media (max-width: 480px) {
+  a.social-icon-menu,
+  .social-icon-menu {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+
+.menu-social-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Botão Cardápio */
+.botao-cardapio {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 11px 21px;
+  font-size: 19px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(255, 102, 0, 0.3);
+}
+
+.botao-cardapio:hover {
+  background-color: #e55a00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.4);
+}
+
+.botao-cardapio:active {
+  transform: translateY(0);
+}
+
+/* Menu Mobile - Escondido por padrão */
+.menu-mobile {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 5px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  transition: all 0.3s ease;
+}
+
+.menu-mobile div {
+  width: 33px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Menu mobile fica preto quando rolar */
+.header-total.scrolled .menu-mobile div {
+  background-color: black;
+}
+
+/* Menu mobile fica preto quando ativo (X visível) */
+.menu-mobile.active div {
+  background-color: black;
+}
+
+.menu-mobile.active div:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.menu-mobile.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-mobile.active div:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Footer do Menu Lateral - Escondido no desktop */
+.menu-footer {
+  display: none;
+}
+
+/* Responsivo - Tablets */
+@media (max-width: 1368px) {
+  .nav-header {
+    gap: 50px;
+    font-size: 1.5rem;
+    padding-right: 50px;
+  }
+
+  .logo h1 {
+    font-size: 1.1rem;
+  }
+
+  .logo-inicial {
+    width: 120px;
+  }
+}
+
+/* Menu Lateral Mobile - Apenas em telas menores */
+@media (max-width: 1070px) {
+  /* Mostrar menu mobile */
+  .menu-mobile {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.logo{
-    display: flex;
-    padding-left: 30px;
-    align-items: center;
-}
-.botao-cardapio{
-    background-color: #ff6600;
-    color: white;
-    border: none;
-    padding: 15px 25px;
-    font-size: 21px;
-    border-radius: 9px;
-    cursor: pointer;
-}
-.separador{
+  }
+
+  /* Esconder botão do desktop */
+  .nav-header > .botao-cardapio {
+    display: none;
+  }
+
+  /* Transformar navegação em menu lateral */
+  .nav-header {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: -100%;
+    width: 320px;
+    max-width: 85vw;
+    height: 100%;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 100px 30px 0;
+    gap: 25px;
+    margin: 0;
+    font-size: 1.5rem;
+    transition: right 0.4s cubic-bezier(0.52, 0.39, 1, 1);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+  }
+
+  .nav-header.active {
+    right: 0;
+  }
+
+  /* Overlay quando menu está aberto */
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 400;
+  }
+
+  /* Garante que o menu lateral esteja acima do overlay */
+  .nav-header.active {
+    z-index: 401;
+  }
+
+  #navegacao a {
+    font-size: 1.3rem;
+    padding: 12px 20px;
     width: 100%;
-    height: 5px;
-    background-color: #4b4b4b;
-} 
+    text-align: left;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: black;
+  }
+
+  #navegacao a:hover {
+    background-color: #fff5f0;
+    transform: translateX(5px);
+    color: #ff6600;
+  }
+
+  #navegacao a::after {
+    display: none;
+  }
+
+  .menu-footer .botao-cardapio {
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    width: 100%;
+    border-radius: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  .menu-footer-div {
+    display: block;
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .menu-footer {
+    display: block;
+    padding: 25px 0;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+  }
+
+  .copyright-menu {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .copyright-menu p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .social-icons-menu {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .social-icon-menu {
+    font-size: 1.5rem;
+    color: #ff6600;
+    transition: all 0.3s ease;
+  }
+
+  .social-icon-menu:hover {
+    color: #e55a00;
+    transform: translateY(-3px);
+  }
+
+  .nav-header.active a,
+  .nav-header.active .menu-footer .botao-cardapio {
+    animation: slideInFromRight 0.5s ease forwards;
+    opacity: 0;
+  }
+
+  .nav-header.active a:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .nav-header.active a:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+
+  .nav-header.active a:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+
+  .nav-header.active .menu-footer .botao-cardapio {
+    animation-delay: 0.25s;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-total {
+    height: 10%;
+  }
+  .logo {
+    padding-left: 15px;
+  }
+
+  .logo h1 {
+    font-size: 1rem;
+  }
+
+  .logo-inicial {
+    width: 110px;
+  }
+  
+  .menu-footer .botao-cardapio {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    padding: 12px 15px;
+    width: 100%;
+  }
+
+  .menu-mobile {
+    top: 17px;
+    right: 15px;
+  }
+
+  #navegacao a {
+    font-size: 1.2rem;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h1 {
+    font-size: 0.9rem;
+  }
+
+  .logo-inicial {
+    width: 85px;
+  }
+
+  .logo {
+    padding-left: 10px;
+    gap: 8px;
+  }
+
+  .nav-header {
+    width: 280px;
+    padding: 80px 20px 20px;
+    gap: 20px;
+  }
+
+  #navegacao a {
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+  }
+
+  .menu-footer .botao-cardapio {
+    margin-top: auto;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    padding: 10px 25px;
+  }
+
+  .menu-mobile div {
+    width: 27px;
+  }
+
+  .social-icons-menu {
+    gap: 15px;
+  }
+
+  .social-icon-menu {
+    font-size: 1.3rem;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

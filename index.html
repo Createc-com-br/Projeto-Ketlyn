@@ -12,32 +12,89 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://scripts.feedspring.com/instagram-attrs.js"
+      async
+      defer
+    ></script>
   </head>
   <body>
-    <div id="pagina-inicial">
-      <header class="header-inicial">
-        <div class="header-total">
-          <div class="logo">
-            <img src="assets/logo-K2.svg" alt="Logo K2" class="logo-inicial" />
-            <h1>
-              Lanches & <br />
-              Conveniência
-            </h1>
-          </div>
-          <div id="navegacao">
-            <nav id="nav-inicial">
+    <header class="header-inicial">
+      <div class="header-total">
+        <div class="logo">
+          <img src="./assets/logo-K2.svg" alt="Logo K2" class="logo-inicial" />
+          <h1>
+            Lanches & <br />
+            Conveniência
+          </h1>
+        </div>
+        <div id="navegacao">
+          <nav id="nav-inicial">
+            <div class="menu-mobile">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="nav-header">
               <a href="#">Início</a>
               <a href="#">Sobre</a>
               <a href="#">Contato</a>
-              <button class="botao-cardapio">Fazer Pedido</button>
-            </nav>
-          </div>
+              <button class="botao-cardapio">
+                <i class="fas fa-utensils"></i> Fazer Pedido
+              </button>
+              <div class="menu-footer">
+                <button class="botao-cardapio">
+                  <i class="fas fa-utensils"></i> Fazer Pedido
+                </button>
+                <div class="menu-footer-div"></div>
+
+                <!-- Footer do Menu Lateral -->
+
+                <p class="menu-social-title">Nossas Redes Sociais</p>
+                <div class="social-icons-menu">
+                  <a href="#" class="social-icon-menu"
+                    ><i class="fab fa-whatsapp"></i
+                  ></a>
+                  <a href="#" class="social-icon-menu"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                  <a href="#" class="social-icon-menu"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </div>
+                <div class="copyright-menu">
+                  <p>
+                    © 2026 K2 Lanches & Conveniência<br />Todos os direitos
+                    reservados
+                  </p>
+                </div>
+              </div>
+            </div>
+          </nav>
         </div>
-      </header>
-      <div class="separador"></div>
+      </div>
+    </header>
+    <div id="pagina-inicial">
+      <div class="secao-inicio">
+        <h1>O melhor da padaria e CONVENIÊNCIA em um SÓ lugar</h1>
+        <p>
+          Sanduíches artesanais, bolos caseiros, tortas, pudins e muito mais.
+          Tudo fresquinho e pronto para você.
+        </p>
+        <button class="botao-cardapio">
+          <i class="fas fa-utensils"></i> Fazer Pedido
+        </button>
+      </div>
+      <div class="secao-elemento">
+        <img class="imagem-elemento" src="./assets/elemento-incial.svg" alt="Imagem de Lanches" />
+      </div>
     </div>
     <div class="sobre-container-sobre">
       <div class="sobre-content-sobre">
@@ -278,5 +335,57 @@
         </div>
       </div>
     </footer>
+    <script>
+      // Efeito de scroll no header
+      window.addEventListener("scroll", () => {
+        const header = document.querySelector(".header-total");
+
+        if (window.scrollY > 600) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+      // Toggle menu mobile
+      const menuMobile = document.querySelector(".menu-mobile");
+      const navHeader = document.querySelector(".nav-header");
+      const body = document.body;
+
+      menuMobile.addEventListener("click", () => {
+        menuMobile.classList.toggle("active");
+        navHeader.classList.toggle("active");
+        body.classList.toggle("menu-open");
+
+        // Prevenir scroll quando menu está aberto
+        if (navHeader.classList.contains("active")) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "auto";
+        }
+      });
+
+      // Fechar menu ao clicar nos links
+      const navLinks = document.querySelectorAll(".nav-header a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          body.classList.remove("menu-open");
+
+          menuMobile.classList.remove("active");
+          navHeader.classList.remove("active");
+          document.body.style.overflow = "auto";
+        });
+      });
+
+      // Fechar menu ao clicar fora dele
+      document.addEventListener("click", (e) => {
+        if (!menuMobile.contains(e.target) && !navHeader.contains(e.target)) {
+          menuMobile.classList.remove("active");
+          body.classList.remove("menu-open");
+
+          navHeader.classList.remove("active");
+          document.body.style.overflow = "auto";
+        }
+      });
+    </script>
   </body>
 </html>
