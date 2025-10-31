@@ -83,21 +83,25 @@
     </header>
     <div id="pagina-inicial">
       <div class="secao-inicio">
-        <div class="texto-inicio" >
-          <div id="text-secao-inicio">
-            <h1>O melhor da padaria e <br> CONVENIÊNCIA em um SÓ <br> lugar</h1>
-          </div>
-          <p>
-            Sanduíches artesanais, bolos caseiros, tortas, pudins e muito mais. <br>
+        <div class="texto-inicio">
+            <h1 id="text-secao-inicio">
+              O <span id="texto-destaque">melhor</span> da padaria e <br />
+              CONVENIÊNCIA em um <br> <span>SÓ lugar</span>
+            </h1>
+          <p id="paragraph-incio">
+            Sanduíches artesanais, bolos caseiros, tortas, pudins e muito mais.
+            <br />
             Tudo fresquinho e pronto para você.
           </p>
-          <button class="botao-cardapio">
-            <i class="fas fa-utensils"></i> Fazer Pedido
-          </button>
+<div class="botao-inicio-wrapper">
+            <button class="botao-inicio-secundario">
+              <i class="fas fa-utensils"></i> Fazer Pedido
+            </button>
+            <button class="botao-inicio-secundario">
+              <i class="fas fa-phone-alt"></i> Entre em Contato
+            </button>
+          </div>
         </div>
-      </div>
-      <div class="secao-elemento">
-        <img class="imagem-elemento" src="./assets/elemento-incial.svg" alt="Imagem de Lanches" />
       </div>
     </div>
     <div class="sobre-container-sobre">
@@ -344,7 +348,7 @@
       window.addEventListener("scroll", () => {
         const header = document.querySelector(".header-total");
 
-        if (window.scrollY > 400) {
+        if (window.scrollY > 80) {
           header.classList.add("scrolled");
         } else {
           header.classList.remove("scrolled");
