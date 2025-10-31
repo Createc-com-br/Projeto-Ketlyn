@@ -364,7 +364,6 @@ body {
     justify-content: center;
     border-width: 1.5px;
   }
-}
 
 .botao-inicio-wrapper {
   margin-top: 28px;
@@ -376,7 +375,7 @@ body {
   padding: 10px 20px;
   font-size: 0.9rem;
 }
-
+}
 /* Responsivo - Celulares pequenos (321px - 390px) */
 @media screen and (max-width: 390px) {
   #pagina-inicial::before {
@@ -453,7 +452,7 @@ body {
     justify-content: center;
     border-width: 1.5px;
   }
-}
+
 
 .botao-inicio-wrapper {
   margin-top: 22px;
@@ -466,7 +465,7 @@ body {
   padding: 9px 16px;
   font-size: 0.8rem;
 }
-
+}
 /* ==========================================
    RESPONSIVIDADE PÁGINA INICIAL - ABAIXO DE 260PX
    ========================================== */
