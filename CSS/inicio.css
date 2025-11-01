@@ -86,13 +86,46 @@ body {
   text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
   animation: fadeInUp 1s ease-out;
-  line-height: 1.3;
+  line-height: 1.4;
   margin: 0 0 30px 0;
 }
 
 #texto-destaque {
   border-bottom: solid 4px #ff6600;
 }
+
+/* ============================================
+   ESTILOS PARA ANIMAÇÃO DE DIGITAÇÃO
+   ============================================ */
+
+.texto-animado-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.texto-animado {
+  display: inline-block;
+  min-width: 10px;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 3px;
+  color: #ff6600;
+  animation: blink 1s infinite;
+  font-weight: 400;
+}
+
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+/* ============================================ */
 
 .botao-inicio-wrapper {
   margin: 30px auto 0;
@@ -117,6 +150,117 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+/* Botões Modernos da Tela Inicial */
+.btn-inicio-moderno {
+  position: relative;
+  padding: 16px 36px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 1;
+}
+
+/* Botão Principal - Laranja com Gradiente */
+.btn-inicio-primario {
+  background: linear-gradient(135deg, #ff6600 0%, #ff8533 100%);
+  color: white;
+  box-shadow: 0 8px 24px rgba(255, 102, 0, 0.35);
+}
+
+.btn-inicio-primario::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ff8533 0%, #ffaa66 100%);
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: -1;
+}
+
+.btn-inicio-primario:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(255, 102, 0, 0.5);
+}
+
+.btn-inicio-primario:hover::before {
+  opacity: 1;
+}
+
+.btn-inicio-primario:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+/* Botão Secundário - Glassmorphism */
+.btn-inicio-secundario {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.btn-inicio-secundario::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: -1;
+  border-radius: 12px;
+}
+
+.btn-inicio-secundario:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 12px 32px rgba(255, 255, 255, 0.15);
+}
+
+.btn-inicio-secundario:hover::before {
+  opacity: 1;
+}
+
+.btn-inicio-secundario:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+/* Ícones dos botões */
+.btn-inicio-moderno i {
+  font-size: 1.15rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-inicio-moderno:hover i {
+  transform: scale(1.1);
+}
+
+/* Animação de entrada dos botões */
+@keyframes btnFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-inicio-primario {
+  animation: btnFadeIn 0.6s ease-out 0.3s backwards;
+}
+
+.btn-inicio-secundario {
+  animation: btnFadeIn 0.6s ease-out 0.5s backwards;
 }
 
 .botao-inicio-secundario:hover {
@@ -149,6 +293,7 @@ body {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -225,7 +370,7 @@ body {
   }
 
   .secao-inicio {
-    padding:25% 30px;
+    padding: 25% 30px;
   }
 
   #text-secao-inicio {
@@ -457,7 +602,7 @@ body {
   }
 
   #text-secao-inicio {
-            font-size: 1.2rem;
+    font-size: 1.2rem;
     margin-bottom: 24px;
     line-height: 1.3;
     text-align: left;
@@ -484,7 +629,6 @@ body {
     flex-wrap: wrap;
   }
 }
-
 
 /* Responsivo - Celulares muito pequenos (até 350px) */
 @media screen and (max-width: 350px) {
@@ -515,16 +659,17 @@ body {
   .texto-inicio p {
     font-size: 0.92rem;
     line-height: 1.6;
+    text-align: left;
   }
 
   .botao-inicio-secundario {
-padding: 11px 14px;
-        font-size: 0.8rem;
-        gap: 5px;
-        border-radius: 5px;
-        width: 100%;
-        justify-content: center;
-        border-width: 1.5px;
+    padding: 11px 14px;
+    font-size: 0.8rem;
+    gap: 5px;
+    border-radius: 5px;
+    width: 150px;
+    justify-content: center;
+    border-width: 1.5px;
   }
 
   .botao-inicio-wrapper {
@@ -680,19 +825,20 @@ padding: 11px 14px;
    ========================================== */
 
 @media screen and (min-width: 2560px) {
+
   /* Header responsivo para 4K */
   .header-total {
     padding: 25px 8%;
   }
-  
+
   .logo h1 {
     font-size: 2.2rem;
   }
-  
+
   .nav-header a {
     font-size: 1.3rem;
   }
-  
+
   .botao-cardapio {
     padding: 16px 32px;
     font-size: 1.2rem;
@@ -703,37 +849,35 @@ padding: 11px 14px;
     padding: 0 8%;
     padding-top: 12vh;
   }
-  
+
   #pagina-inicial::before {
     transform: scale(1);
   }
-  
 
-  
   /* AUMENTANDO A LARGURA DO TEXTO */
   .texto-inicio {
     max-width: 1200px;
     width: 100%;
   }
-  
+
   #text-secao-inicio {
     font-size: 4.2rem;
     margin-bottom: 40px;
     line-height: 1.2;
   }
-  
+
   .texto-inicio p {
     font-size: 1.8rem;
     line-height: 2;
     max-width: 1000px;
   }
-  
+
   .botao-inicio-secundario {
     padding: 22px 40px;
     font-size: 1.4rem;
     border-radius: 12px;
   }
-  
+
   .botao-inicio-wrapper {
     margin-top: 50px;
     gap: 4vw;
@@ -743,26 +887,26 @@ padding: 11px 14px;
   .sobre-container-sobre {
     padding: 120px 8%;
   }
-  
+
   .sobre-content-sobre {
     max-width: 1800px;
     margin: 0 auto;
   }
-  
+
   .sobre-title-sobre {
     font-size: 3.5rem;
   }
-  
+
   .sobre-paragraph-sobre {
     font-size: 1.4rem;
     line-height: 1.8;
     max-width: 900px;
   }
-  
+
   .box-title-sobre {
     font-size: 1.8rem;
   }
-  
+
   .box-text-sobre {
     font-size: 1.3rem;
     max-width: 500px;
@@ -772,29 +916,29 @@ padding: 11px 14px;
   .contato-conteiner-contato {
     padding: 100px 8%;
   }
-  
+
   .conhecer-section-contato {
     max-width: 1800px;
     margin: 0 auto;
   }
-  
+
   .conhecer-title-contato {
     font-size: 3rem;
   }
-  
+
   .conhecer-header-contato h3 {
     font-size: 1.8rem;
   }
-  
+
   .horario-item-contato {
     font-size: 1.3rem;
     padding: 18px 0;
   }
-  
+
   .iframe-mapa-contato {
     height: 400px;
   }
-  
+
   .btn-rotas-contato {
     padding: 18px 32px;
     font-size: 1.3rem;
@@ -806,24 +950,24 @@ padding: 11px 14px;
     max-width: 1800px;
     margin: 0 auto;
   }
-  
+
   .logo-title-footer {
     font-size: 2.2rem;
   }
-  
+
   .section-title-footer {
     font-size: 1.5rem;
   }
-  
+
   .navigation-links-footer,
   .contact-info-footer {
     font-size: 1.2rem;
   }
-  
+
   .copyright-text-footer {
     font-size: 1.1rem;
   }
-  
+
   .social-icon-footer {
     width: 45px;
     height: 45px;
@@ -846,32 +990,32 @@ padding: 11px 14px;
     padding: 0 12%;
     padding-top: 15vh;
   }
-  
+
   /* AUMENTO MAIOR PARA ULTRA WIDE */
   .secao-inicio {
     max-width: 2200px;
   }
-  
+
   .texto-inicio {
     max-width: 1500px;
   }
-  
+
   #text-secao-inicio {
     font-size: 5.2rem;
     margin-bottom: 50px;
   }
-  
+
   .texto-inicio p {
     font-size: 2.2rem;
     line-height: 2.2;
     max-width: 1300px;
   }
-  
+
   .botao-inicio-secundario {
     padding: 28px 50px;
     font-size: 1.8rem;
   }
-  
+
   .header-total,
   .sobre-container-sobre,
   .contato-conteiner-contato,
@@ -881,22 +1025,22 @@ padding: 11px 14px;
     max-width: 2200px;
     margin: 0 auto;
   }
-  
+
   .sobre-content-sobre,
   .conhecer-section-contato {
     max-width: 2200px;
   }
-  
+
   .sobre-paragraph-sobre {
     max-width: 1100px;
     font-size: 1.6rem;
   }
-  
+
   .box-text-sobre {
     max-width: 600px;
     font-size: 1.4rem;
   }
-  
+
   .imagem-whatsapp {
     width: 6rem;
     right: 3%;
@@ -913,30 +1057,30 @@ padding: 11px 14px;
     padding: 0 8%;
     padding-top: 10vh;
   }
-  
+
   /* AUMENTO INTERMEDIÁRIO PARA 2K */
   .secao-inicio {
     max-width: 1600px;
   }
-  
+
   .texto-inicio {
     max-width: 1000px;
   }
-  
+
   #text-secao-inicio {
     font-size: 3.8rem;
   }
-  
+
   .texto-inicio p {
     font-size: 1.6rem;
     max-width: 900px;
   }
-  
+
   .botao-inicio-secundario {
     padding: 20px 36px;
     font-size: 1.3rem;
   }
-  
+
   .header-total,
   .sobre-container-sobre,
   .contato-conteiner-contato,
