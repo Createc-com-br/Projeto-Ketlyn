@@ -1,5 +1,5 @@
 .contato-conteiner-contato {
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -189,28 +189,6 @@
 
 .btn-rotas-contato:hover {
     background-color: #e65c00;
-}
-
-/* Adaptação para telas grandes */
-@media (min-width: 1400px) {
-    .conhecer-section-contato {
-        max-width: 1400px;
-    }
-    
-    .conhecer-content-contato {
-        gap: 60px;
-        margin-top: 30px;
-    }
-    
-    .conhecer-horario-contato,
-    .conhecer-localizacao-contato {
-        padding: 40px;
-    }
-    
-    .iframe-mapa-contato {
-        height: 320px !important;
-        border-radius: 10px;
-    }
 }
 
 /* Responsivo */
