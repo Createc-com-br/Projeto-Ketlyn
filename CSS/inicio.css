@@ -10,6 +10,24 @@ body {
   overflow-x: hidden;
   width: 100%;
 }
+
+.imagem-whatsapp {
+  position: fixed;
+  right: 1%;
+  bottom: 26px;
+  z-index: 10400;
+  cursor: pointer;
+  width: 3.9rem;
+  object-fit: cover;
+  filter: drop-shadow(0 0 8px rgba(37, 211, 102, 0.5));
+  transition: all 0.3s ease;
+}
+
+.imagem-whatsapp:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 12px rgba(37, 211, 102, 0.8));
+}
+
 #pagina-inicial {
   width: 100%;
   min-height: 100vh;
@@ -188,7 +206,7 @@ body {
   }
 
   .secao-inicio {
-    padding: 10% 40px;
+    padding: 27% 40px;
   }
 
   #text-secao-inicio {
@@ -207,7 +225,7 @@ body {
   }
 
   .secao-inicio {
-    padding: 10% 30px;
+    padding:25% 30px;
   }
 
   #text-secao-inicio {
@@ -226,7 +244,7 @@ body {
   }
 
   .secao-inicio {
-    padding: 15% 25px;
+    padding: 30% 25px;
   }
 
   #text-secao-inicio {
@@ -250,7 +268,7 @@ body {
   }
 
   .secao-inicio {
-    padding: 18% 20px;
+    padding: 48% 20px;
   }
 
   .botao-inicio-secundario {
@@ -268,228 +286,287 @@ body {
   }
 }
 
+/* ==========================================
+   MOBILE - MODIFICAÇÕES COMEÇAM AQUI
+   ========================================== */
+
 /* Responsivo - Celulares grandes (481px - 599px) */
 @media screen and (max-width: 599px) {
-  #pagina-inicial::before {
-    transform: scale(1.4);
+  #pagina-inicial {
+    align-items: center;
+    padding: 0 5%;
   }
 
-  .secao-inicio {
-    padding: 20% 15px;
-    min-height: 75vh;
-  }
-
-  .botao-inicio-secundario {
-    padding: 12px 10px;
-    font-size: 1rem;
-  }
-
-  #text-secao-inicio {
-    font-size: 1.7rem;
-    margin-bottom: 22px;
-  }
-
-  .texto-inicio p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-  }
-
-  .botao-cardapio {
-    padding: 12px 24px;
-    font-size: 0.95rem;
-  }
-
-  .botao-inicio-wrapper {
-    margin-top: 25px;
-  }
-}
-
-/* Responsivo - 550px+ (ajuste de fontes e altura) */
-@media screen and (min-width: 550px) and (max-width: 599px) {
-  #pagina-inicial::before {
-    transform: scale(1.15);
-  }
-
-  .secao-inicio {
-    padding: 25% 15px;
-    min-height: 80vh;
-  }
-
-  #text-secao-inicio {
-    font-size: 2rem;
-    margin-bottom: 25px;
-  }
-
-  .texto-inicio p {
-    font-size: 1.12rem;
-    line-height: 1.8;
-  }
-
-  .botao-inicio-secundario {
-    padding: 13px 23px;
-    font-size: 1.02rem;
-  }
-}
-
-/* Responsivo - Celulares médios (391px - 480px) */
-@media screen and (max-width: 480px) {
   #pagina-inicial::before {
     transform: scale(1.3);
   }
 
   .secao-inicio {
-    padding: 30% 12px;
-    min-height: 65vh;
+    padding: 5% 20px;
+    min-height: 95vh;
+    justify-content: center;
+    max-width: 100%;
+    width: 100%;
   }
 
-  #text-secao-inicio {
-    font-size: 1.45rem;
-    margin-bottom: 22px;
-    line-height: 1.4;
-  }
-
-  .texto-inicio p {
-    font-size: 0.9rem;
-    line-height: 1.7;
+  .texto-inicio {
+    text-align: left;
+    max-width: 100%;
+    width: 100%;
   }
 
   .botao-inicio-secundario {
-    padding: 10px 12px;
-    font-size: 0.9rem;
+    padding: 14px 18px;
+    font-size: 0.95rem;
     white-space: nowrap;
-    gap: 5px;
-    border-radius: 5px;
-    width: 100%;
-    max-width: 100%;
-    justify-content: center;
-    border-width: 1.5px;
   }
 
-.botao-inicio-wrapper {
-  margin-top: 28px;
-  gap: 20px;
-  flex-wrap: nowrap;
+  #text-secao-inicio {
+    font-size: 1.95rem;
+    margin-bottom: 28px;
+    line-height: 1.3;
+    text-align: left;
+    word-wrap: break-word;
+  }
+
+  .texto-inicio p {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    word-wrap: break-word;
+  }
+
+  .botao-inicio-wrapper {
+    margin-top: 30px;
+    justify-content: left;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
 }
 
-.botao-cardapio {
-  padding: 10px 20px;
-  font-size: 0.9rem;
+/* Responsivo - 550px+ (ajuste de fontes e altura) */
+@media screen and (min-width: 550px) and (max-width: 599px) {
+  #pagina-inicial {
+    padding: 0 6%;
+  }
+
+  #pagina-inicial::before {
+    transform: scale(1.15);
+  }
+
+  .secao-inicio {
+    padding: 5% 22px;
+    min-height: 95vh;
+    width: 100%;
+  }
+
+  .texto-inicio {
+    width: 100%;
+  }
+
+  #text-secao-inicio {
+    font-size: 2.1rem;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  .texto-inicio p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+  }
+
+  .botao-inicio-secundario {
+    padding: 15px 24px;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
 }
+
+/* Responsivo - Celulares médios (391px - 480px) */
+@media screen and (max-width: 480px) {
+  #pagina-inicial {
+    align-items: center;
+    padding: 0 4%;
+  }
+
+  #pagina-inicial::before {
+    transform: scale(1.3);
+  }
+
+  .secao-inicio {
+    padding: 5% 18px;
+    min-height: 92vh;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .texto-inicio {
+    text-align: left;
+    width: 100%;
+  }
+
+  #text-secao-inicio {
+    font-size: 1.6rem;
+    margin-bottom: 26px;
+    line-height: 1.3;
+    text-align: left;
+    word-wrap: break-word;
+  }
+
+  .texto-inicio p {
+    font-size: 1rem;
+    line-height: 1.7;
+    word-wrap: break-word;
+  }
+
+  .botao-inicio-secundario {
+    padding: 12px 16px;
+    font-size: 0.88rem;
+    gap: 6px;
+    white-space: nowrap;
+  }
+
+  .botao-inicio-wrapper {
+    margin-top: 28px;
+    justify-content: left;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
 }
+
 /* Responsivo - Celulares pequenos (321px - 390px) */
 @media screen and (max-width: 390px) {
+  #pagina-inicial {
+    align-items: center;
+    padding: 0 3%;
+  }
+
   #pagina-inicial::before {
     transform: scale(1.35);
   }
 
   .secao-inicio {
-    padding: 30% 10px;
-    min-height: 55vh;
+    padding: 5% 15px;
+    min-height: 90vh;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .texto-inicio {
+    text-align: left;
+    width: 100%;
   }
 
   #text-secao-inicio {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-    line-height: 1.4;
+            font-size: 1.2rem;
+    margin-bottom: 24px;
+    line-height: 1.3;
+    text-align: left;
+    word-wrap: break-word;
   }
 
   .texto-inicio p {
-    font-size: 1rem;
+    font-size: 0.85rem;
     line-height: 1.65;
+    word-wrap: break-word;
   }
 
   .botao-inicio-secundario {
-    padding: 12px 18px;
-    font-size: 0.9rem;
+    padding: 11px 14px;
+    font-size: 0.82rem;
+    gap: 5px;
     white-space: nowrap;
-    gap: 7px;
   }
 
   .botao-inicio-wrapper {
     margin-top: 26px;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: nowrap;
-  }
-
-  .botao-cardapio {
-    padding: 10px 20px;
-    font-size: 0.88rem;
+    justify-content: left;
+    gap: 8px;
+    flex-wrap: wrap;
   }
 }
 
+
 /* Responsivo - Celulares muito pequenos (até 350px) */
 @media screen and (max-width: 350px) {
+  #pagina-inicial {
+    align-items: center;
+  }
+
   #pagina-inicial::before {
     transform: scale(1.4);
   }
 
   .secao-inicio {
-            padding: 47% 8px;
-        min-height: 5vh;
-    }
-  
+    padding: 5% 10px;
+    min-height: 88vh;
+    justify-content: center;
+  }
+
+  .texto-inicio {
+    text-align: center;
+  }
 
   #text-secao-inicio {
     font-size: 1.3rem;
-    margin-bottom: 18px;
-    line-height: 1.35;
+    margin-bottom: 22px;
+    line-height: 1.3;
   }
 
   .texto-inicio p {
-    font-size: 0.8rem;
+    font-size: 0.92rem;
     line-height: 1.6;
   }
 
   .botao-inicio-secundario {
-    padding: 10px 12px;
-    font-size: 0.75rem;
-    white-space: nowrap;
-    gap: 5px;
-    border-radius: 5px;
-    width: 100%;
-    max-width: 100%;
-    justify-content: center;
-    border-width: 1.5px;
+padding: 11px 14px;
+        font-size: 0.8rem;
+        gap: 5px;
+        border-radius: 5px;
+        width: 100%;
+        justify-content: center;
+        border-width: 1.5px;
   }
 
-
-.botao-inicio-wrapper {
-  margin-top: 22px;
-  justify-content: center;
-  gap: 8px;
-  align-items: center;
+  .botao-inicio-wrapper {
+    margin-top: 24px;
+    justify-content: center;
+    gap: 10px;
+  }
 }
 
-.botao-cardapio {
-  padding: 9px 16px;
-  font-size: 0.8rem;
-}
-}
 /* ==========================================
-   RESPONSIVIDADE PÁGINA INICIAL - ABAIXO DE 260PX
+   RESPONSIVIDADE PÁGINA INICIAL - ABAIXO DE 300PX
    ========================================== */
 
 @media screen and (max-width: 300px) {
-  /* ========== PÁGINA INICIAL ========== */
   #pagina-inicial {
-    padding: 0 2%;
-    padding-top: 4vh;
+    padding: 0 3%;
+    padding-top: 5vh;
     min-height: 100vh;
+    align-items: center;
+  }
+
+  #pagina-inicial::before {
+    transform: scale(1.45);
   }
 
   .secao-inicio {
-    padding: 45% 3px;
+    padding: 5% 8px;
     max-width: 100%;
-    min-height: 84vh;
+    min-height: 85vh;
+    justify-content: center;
+  }
+
+  .texto-inicio {
+    text-align: center;
+    max-width: 100%;
   }
 
   #text-secao-inicio {
-    font-size: 1.15rem;
-    margin-bottom: 12px;
-    line-height: 1.2;
-    word-break: break-word;
-    text-align: center;
+    font-size: 1.35rem;
+    margin-bottom: 20px;
+    line-height: 1.25;
+    word-break: keep-all;
   }
 
   #text-secao-inicio br {
@@ -497,21 +574,15 @@ body {
   }
 
   #texto-destaque {
-    border-bottom: solid 2px #ff6600;
+    border-bottom: solid 3px #ff6600;
     display: inline-block;
     padding-bottom: 1px;
   }
 
-  .texto-inicio {
-    max-width: 100%;
-    text-align: center;
-  }
-
   .texto-inicio p {
-    font-size: 0.85rem;
-    line-height: 1.4;
-    word-break: break-word;
-    margin-bottom: 12px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 0;
   }
 
   #paragraph-incio br {
@@ -519,28 +590,26 @@ body {
   }
 
   .botao-inicio-wrapper {
-    margin-top: 15px;
+    margin-top: 22px;
     justify-content: center;
-    gap: 6px;
+    gap: 8px;
     flex-direction: column;
     align-items: stretch;
     width: 100%;
   }
 
   .botao-inicio-secundario {
-    padding: 10px 12px;
-    font-size: 0.75rem;
-    white-space: nowrap;
+    padding: 11px 14px;
+    font-size: 0.8rem;
     gap: 5px;
     border-radius: 5px;
     width: 100%;
-    max-width: 100%;
     justify-content: center;
     border-width: 1.5px;
   }
 
   .botao-inicio-secundario i {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
   }
 
   .botao-inicio-secundario:hover {
@@ -554,48 +623,327 @@ body {
 
 @media screen and (max-width: 240px) {
   #pagina-inicial {
-    padding: 0 1%;
-    padding-top: 3vh;
+    padding: 0 2%;
+    padding-top: 4vh;
+    align-items: center;
   }
 
   #pagina-inicial::before {
-    transform: scale(1.2);
+    transform: scale(1.5);
   }
 
   .secao-inicio {
-    padding: 55% 2px;
-    min-height: 80vh;
+    padding: 5% 5px;
+    min-height: 82vh;
+    justify-content: center;
+  }
+
+  .texto-inicio {
+    text-align: center;
   }
 
   #text-secao-inicio {
-    font-size: 1.05rem;
-    margin-bottom: 10px;
-    line-height: 1.15;
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+    line-height: 1.2;
   }
 
   #texto-destaque {
-    border-bottom-width: 1.5px;
+    border-bottom-width: 2px;
   }
 
   .texto-inicio p {
-    font-size: 0.8rem;
-    line-height: 1.35;
-    margin-bottom: 10px;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    margin-bottom: 0;
   }
 
   .botao-inicio-wrapper {
-    margin-top: 12px;
-    gap: 5px;
+    margin-top: 20px;
+    gap: 6px;
   }
 
   .botao-inicio-secundario {
-    padding: 9px 10px;
-    font-size: 0.7rem;
+    padding: 10px 12px;
+    font-size: 0.75rem;
     gap: 4px;
     border-radius: 4px;
   }
 
   .botao-inicio-secundario i {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* ==========================================
+   RESPONSIVIDADE 4K (2560px+)
+   ========================================== */
+
+@media screen and (min-width: 2560px) {
+  /* Header responsivo para 4K */
+  .header-total {
+    padding: 25px 8%;
+  }
+  
+  .logo h1 {
+    font-size: 2.2rem;
+  }
+  
+  .nav-header a {
+    font-size: 1.3rem;
+  }
+  
+  .botao-cardapio {
+    padding: 16px 32px;
+    font-size: 1.2rem;
+  }
+
+  /* Página inicial responsiva para 4K - MAIOR LARGURA */
+  #pagina-inicial {
+    padding: 0 8%;
+    padding-top: 12vh;
+  }
+  
+  #pagina-inicial::before {
+    transform: scale(1);
+  }
+  
+
+  
+  /* AUMENTANDO A LARGURA DO TEXTO */
+  .texto-inicio {
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  #text-secao-inicio {
+    font-size: 4.2rem;
+    margin-bottom: 40px;
+    line-height: 1.2;
+  }
+  
+  .texto-inicio p {
+    font-size: 1.8rem;
+    line-height: 2;
+    max-width: 1000px;
+  }
+  
+  .botao-inicio-secundario {
+    padding: 22px 40px;
+    font-size: 1.4rem;
+    border-radius: 12px;
+  }
+  
+  .botao-inicio-wrapper {
+    margin-top: 50px;
+    gap: 4vw;
+  }
+
+  /* Sobre responsivo para 4K */
+  .sobre-container-sobre {
+    padding: 120px 8%;
+  }
+  
+  .sobre-content-sobre {
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+  
+  .sobre-title-sobre {
+    font-size: 3.5rem;
+  }
+  
+  .sobre-paragraph-sobre {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    max-width: 900px;
+  }
+  
+  .box-title-sobre {
+    font-size: 1.8rem;
+  }
+  
+  .box-text-sobre {
+    font-size: 1.3rem;
+    max-width: 500px;
+  }
+
+  /* Contato responsivo para 4K */
+  .contato-conteiner-contato {
+    padding: 100px 8%;
+  }
+  
+  .conhecer-section-contato {
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+  
+  .conhecer-title-contato {
+    font-size: 3rem;
+  }
+  
+  .conhecer-header-contato h3 {
+    font-size: 1.8rem;
+  }
+  
+  .horario-item-contato {
+    font-size: 1.3rem;
+    padding: 18px 0;
+  }
+  
+  .iframe-mapa-contato {
+    height: 400px;
+  }
+  
+  .btn-rotas-contato {
+    padding: 18px 32px;
+    font-size: 1.3rem;
+  }
+
+  /* Footer responsivo para 4K */
+  .footer-container-footer {
+    padding: 60px 8%;
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+  
+  .logo-title-footer {
+    font-size: 2.2rem;
+  }
+  
+  .section-title-footer {
+    font-size: 1.5rem;
+  }
+  
+  .navigation-links-footer,
+  .contact-info-footer {
+    font-size: 1.2rem;
+  }
+  
+  .copyright-text-footer {
+    font-size: 1.1rem;
+  }
+  
+  .social-icon-footer {
+    width: 45px;
+    height: 45px;
+  }
+
+  /* WhatsApp button para 4K */
+  .imagem-whatsapp {
+    width: 5rem;
+    right: 2%;
+    bottom: 40px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVIDADE ULTRA WIDE (3840px+)
+   ========================================== */
+
+@media screen and (min-width: 3840px) {
+  #pagina-inicial {
+    padding: 0 12%;
+    padding-top: 15vh;
+  }
+  
+  /* AUMENTO MAIOR PARA ULTRA WIDE */
+  .secao-inicio {
+    max-width: 2200px;
+  }
+  
+  .texto-inicio {
+    max-width: 1500px;
+  }
+  
+  #text-secao-inicio {
+    font-size: 5.2rem;
+    margin-bottom: 50px;
+  }
+  
+  .texto-inicio p {
+    font-size: 2.2rem;
+    line-height: 2.2;
+    max-width: 1300px;
+  }
+  
+  .botao-inicio-secundario {
+    padding: 28px 50px;
+    font-size: 1.8rem;
+  }
+  
+  .header-total,
+  .sobre-container-sobre,
+  .contato-conteiner-contato,
+  .footer-container-footer {
+    padding-left: 12%;
+    padding-right: 12%;
+    max-width: 2200px;
+    margin: 0 auto;
+  }
+  
+  .sobre-content-sobre,
+  .conhecer-section-contato {
+    max-width: 2200px;
+  }
+  
+  .sobre-paragraph-sobre {
+    max-width: 1100px;
+    font-size: 1.6rem;
+  }
+  
+  .box-text-sobre {
+    max-width: 600px;
+    font-size: 1.4rem;
+  }
+  
+  .imagem-whatsapp {
+    width: 6rem;
+    right: 3%;
+    bottom: 50px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVIDADE 2K (2048px - 2559px)
+   ========================================== */
+
+@media screen and (min-width: 2048px) and (max-width: 2559px) {
+  #pagina-inicial {
+    padding: 0 8%;
+    padding-top: 10vh;
+  }
+  
+  /* AUMENTO INTERMEDIÁRIO PARA 2K */
+  .secao-inicio {
+    max-width: 1600px;
+  }
+  
+  .texto-inicio {
+    max-width: 1000px;
+  }
+  
+  #text-secao-inicio {
+    font-size: 3.8rem;
+  }
+  
+  .texto-inicio p {
+    font-size: 1.6rem;
+    max-width: 900px;
+  }
+  
+  .botao-inicio-secundario {
+    padding: 20px 36px;
+    font-size: 1.3rem;
+  }
+  
+  .header-total,
+  .sobre-container-sobre,
+  .contato-conteiner-contato,
+  .footer-container-footer {
+    padding-left: 6%;
+    padding-right: 6%;
+    max-width: 1600px;
+    margin: 0 auto;
   }
 }
