@@ -40,7 +40,7 @@
    ============================================ */
 
 .contato-conteiner-contato {
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -257,7 +257,6 @@
     background-color: #e65c00;
 }
 
-/* Adaptação para telas grandes */
 @media (min-width: 1400px) {
     .conhecer-section-contato {
         max-width: 1400px;
@@ -278,7 +277,6 @@
         border-radius: 10px 10px 0 0;
     }
 }
-
 /* Responsivo */
 @media (max-width: 768px) {
     .contato-conteiner-contato {
