@@ -1,7 +1,6 @@
 .footer-footer {
-    background-color: #f9f6f3;
     padding: 40px 20px 20px;
-    border-top: 2px solid #d9733475;
+    box-shadow: 0 -4px 12px rgba(255, 102, 0, 0.096);
     width: 100%;
 }
 
@@ -14,7 +13,7 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 30px;
-    border-bottom: 2px solid #d97234;
+    border-bottom: 2px solid #ff6600;
 }
 
 .flex-footer {
@@ -24,7 +23,7 @@
 
 .barra-footer {
     width: 2px;
-    background-color: #d973344f;
+    background-color: #ff660030;
 }
 
 .logo-section-footer {
@@ -43,7 +42,7 @@
 }
 
 .logo-title-footer {
-    color: #d97234;
+    color: #ff6600;
     font-size: 20px;
     font-weight: 600;
     max-width: 150px;
@@ -61,7 +60,7 @@
 }
 
 .section-title-footer {
-    color: #d97234;
+    color: #ff6600;
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 15px;
@@ -89,7 +88,7 @@
 }
 
 .nav-link-footer:hover {
-    color: #d97234;
+    color: #ff6600;
 }
 
 .contact-item-footer {
@@ -136,7 +135,6 @@
     align-items: center;
     justify-content: center;
     transition: transform 0.3s;
-    background-color: #f0f0f0;
 }
 
 .social-link-footer:hover {
@@ -320,6 +318,7 @@
         gap: 35px;
         border-bottom: none;
         padding-bottom: 0;
+        margin-bottom: 35px;
     }
     
     /* Logo horizontal centralizada */
@@ -329,7 +328,7 @@
         align-self: center;
         width: auto;
         gap: 15px;
-        border-bottom: 2px solid #d9733475;
+        border-bottom: 2px solid #ff660045;
         margin-bottom: 10px;
     }
     
@@ -377,10 +376,9 @@
     }
     
     .copyright-section-footer {
-        align-items: flex-start;
         justify-content: flex-start;
         padding-top: 25px;
-        border-top: 2px solid #d97234;
+        border-top: 2px solid #ff6600;
     }
     
     .copyright-text-footer {

@@ -1,27 +1,18 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-}
-
 /* ============================================
    DESKTOP PADRÃO (até 1920px)
    ============================================ */
 
 .sobre-container-sobre {
-    background-color: #f9f6f3;
-    justify-items: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding: 40px 20px;
 }
 
 .sobre-content-sobre {
     max-width: 1400px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     gap: 60px;
@@ -41,28 +32,28 @@ body {
 }
 
 .sobre-title-sobre {
-    font-size: 42px;
+    font-size: 52px;
     font-weight: bold;
     color: #000;
 }
 
 .sobre-title-line-sobre {
-    width: 60px;
-    height: 2px;
-    background-color: #ff6b35;
+    width: 80px;
+    height: 3px;
+    background-color: #ff6600;
     margin: 0 auto;
 }
 
 .sobre-paragraph-sobre {
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.8;
     color: #000;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     text-align: justify;
 }
 
 .highlight-orange-sobre {
-    color: #ff6b35;
+    color: #ff6600;
     font-weight: bold;
 }
 
@@ -79,14 +70,14 @@ body {
 
 .sobre-divider-sobre {
     width: 2px;
-    height: 80px;
-    background-color: #d9733475;
+    height: 90px;
+    background-color: #ff660045;
     margin: 0 15px;
     align-self: center;
 }
 
 .box-title-sobre {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     color: #000;
     margin-bottom: 15px;
@@ -94,17 +85,17 @@ body {
 }
 
 .box-text-sobre {
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.6;
     color: #333;
     text-align: justify;
 }
 
 .sobre-image-sobre {
-    flex: 0 0 330px;
+    flex: 0 0 420px;
     position: relative;
     background-color: #fff;
-    padding: 15px;
+    padding: 18px;
     border-radius: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     height: fit-content;
@@ -124,8 +115,7 @@ body {
 
 @media (min-width: 2560px) {
     .sobre-container-sobre {
-        padding-top: 80px;
-        padding-bottom: 80px;
+        padding: 60px 40px;
     }
 
     .sobre-content-sobre {
@@ -346,12 +336,13 @@ body {
 }
 
 /* ============================================
-   MOBILE GRANDE (481px - 767px)
+   MOBILE - A PARTIR DE 375px (375px - 767px)
    ============================================ */
 
-@media (min-width: 481px) and (max-width: 767px) {
+@media (min-width: 375px) and (max-width: 767px) {
     .sobre-container-sobre {
         padding: 45px 25px;
+        min-height: 100vh;
     }
     
     .sobre-content-sobre {
@@ -394,84 +385,32 @@ body {
     }
 
     .sobre-image-sobre {
-        max-width: 320px;
-        padding: 12px;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+
+    .sobre-image-sobre img {
+        border-radius: 15px;
     }
 }
 
 /* ============================================
-   MOBILE PEQUENO (até 480px)
+   MOBILE EXTRA PEQUENO (até 374px)
    ============================================ */
 
-@media (max-width: 480px) {
+@media (max-width: 374px) {
     .sobre-container-sobre {
-        padding: 40px 20px;
+        padding: 35px 15px;
+        min-height: 100vh;
     }
-    
+
     .sobre-content-sobre {
         flex-direction: column;
         gap: 35px;
         padding: 0;
-    }
-    
-    .sobre-title-sobre {
-        font-size: 28px;
-    }
-
-    .sobre-title-line-sobre {
-        width: 50px;
-    }
-
-    .sobre-title-wrapper-sobre {
-        margin-bottom: 18px;
-    }
-    
-    .sobre-paragraph-sobre {
-        font-size: 14px;
-        line-height: 1.7;
-        margin-bottom: 15px;
-    }
-    
-    .sobre-boxes-sobre {
-        flex-direction: column;
-        gap: 18px;
-        margin-top: 25px;
-    }
-    
-    .sobre-divider-sobre {
-        width: 100%;
-        height: 2px;
-        margin: 0;
-    }
-
-    .box-title-sobre {
-        font-size: 15px;
-        margin-bottom: 12px;
-    }
-
-    .box-text-sobre {
-        font-size: 13px;
-        line-height: 1.5;
-    }
-    
-    .sobre-image-sobre {
-        max-width: 100%;
-        padding: 12px;
-        border-radius: 15px;
-    }
-
-    .sobre-image-sobre img {
-        border-radius: 10px;
-    }
-}
-
-/* ============================================
-   MOBILE EXTRA PEQUENO (até 360px)
-   ============================================ */
-
-@media (max-width: 360px) {
-    .sobre-container-sobre {
-        padding: 35px 15px;
     }
 
     .sobre-title-sobre {
@@ -480,6 +419,10 @@ body {
 
     .sobre-title-line-sobre {
         width: 45px;
+    }
+
+    .sobre-title-wrapper-sobre {
+        margin-bottom: 18px;
     }
 
     .sobre-paragraph-sobre {
@@ -495,6 +438,14 @@ body {
     }
 
     .sobre-image-sobre {
-        padding: 10px;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+
+    .sobre-image-sobre img {
+        border-radius: 15px;
     }
 }
