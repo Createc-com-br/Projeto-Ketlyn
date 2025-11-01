@@ -1,3 +1,44 @@
+/* ============================================
+   ANIMAÇÕES DE SCROLL
+   ============================================ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ============================================
+   ESTILOS BASE
+   ============================================ */
+
 .contato-conteiner-contato {
     min-height: 90vh;
     display: flex;
@@ -20,17 +61,22 @@
     color: #1a1a1a;
     margin-bottom: 10px;
     position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
+    display: block;
+    width: 100%;
+    opacity: 0;
+}
+
+.conhecer-title-contato.animate {
+    animation: fadeInUp 0.3s ease-out forwards;
 }
 
 .conhecer-title-contato::after {
     content: '';
     position: absolute;
     bottom: -8px;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
     height: 3px;
     background-color: #ff6600;
 }
@@ -65,6 +111,11 @@
 /* Barra vertical central */
 .conhecer-horario-contato {
     position: relative;
+    opacity: 0;
+}
+
+.conhecer-horario-contato.animate {
+    animation: fadeInLeft 0.3s ease-out 0.3s forwards;
 }
 
 .conhecer-horario-contato::after {
@@ -80,6 +131,14 @@
 .conhecer-horario-contato,
 .conhecer-localizacao-contato {
     padding: 30px;
+}
+
+.conhecer-localizacao-contato {
+    opacity: 0;
+}
+
+.conhecer-localizacao-contato.animate {
+    animation: fadeInRight 0.3s ease-out 0.3s forwards;
 }
 
 .conhecer-header-contato {
@@ -158,13 +217,20 @@
 }
 
 .iframe-mapa-contato {
-    border-radius: 8px;
-    margin-bottom: 15px;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 0;
 }
 
 .endereco-info-contato {
     text-align: center;
+    padding: 15px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 8px 8px;
+    margin-top: -5px;
     margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
 }
 
 .endereco-info-contato p {
@@ -209,7 +275,7 @@
     
     .iframe-mapa-contato {
         height: 320px !important;
-        border-radius: 10px;
+        border-radius: 10px 10px 0 0;
     }
 }
 
